@@ -40,18 +40,15 @@ export default function SignUp() {
       newErrors.email= "please fill  in your email"
     }
 
-    if(!inputData.password){
+    if(!inputData.password ){
       newErrors.password= "please fill in your password"
     }
 
     if(!inputData.confirmpass){
       newErrors.confirmpass= "please fill in your confirm password"
     }
-
     return newErrors
   }
-
-
     // function for formHandling
     const handleSubmit = (e) => {
         // prevent form default submission
@@ -106,7 +103,7 @@ export default function SignUp() {
                   </div>
 
 
-                  <div className='py-8'>
+                  <div className='py-4'>
                     <label>
                       <input type="file" name='picture' onChange={handleOnChange} />
                       <button className='bg-orange-600  cursor-pointer text-wcdcdchite text-sm px-2 py-3 w-30 rounded-full'>Upload</button>
@@ -114,38 +111,38 @@ export default function SignUp() {
                   </div>
                 </div>
              
-                <div className='py-8'>
+                <div className='py-4'>
                   <label className='block px-2 py-2 text-sm'>Full name</label>
                   <input type="text" name='fullname' placeholder='Ngalaka Gift' onChange={handleOnChange} className='w-full border border-black/25 py-2 px-2 outline-none hover:outline-1 rounded-full placeholder:px-3 text-sm' />
                 </div>
 
-                 {errors.fullname &&(<p className='text-red-500 font-mono font-semibold text-sm'>{errors.fullname}</p>)}
+                 {errors.fullname &&(<p className='text-red-500 font-mono font-semibold text-xs italic'>{errors.fullname}</p>)}
 
-                <div className=''>
+                <div className='py-4'>
                   <label className='block px-2 py-2 text-sm'>Email</label>
                   <input type="email" name='email' placeholder='ngalakagift@gmail.com' onChange={handleOnChange} className='w-full border border-black/25 py-2 px-2 outline-none hover:outline-1 rounded-full placeholder:px-3 text-sm' />
                 </div>
 
-                 {errors.email &&(<p className='text-red-500 font-mono font-semibold'>{errors.email}</p>)}
+                 {errors.email &&(<p className='text-red-500 font-mono font-semibold text-xs italic'>{errors.email}</p>)}
 
-                <div className=''>
+                <div className='py-4'>
                   <label className='block px-2 py-2 text-sm'>Password</label>
                   <input type="password" name='password' placeholder='............'  onChange={handleOnChange} className='w-full border border-black/25 py-2 px-2 outline-none hover:outline-1 rounded-full placeholder:px-3 text-sm' />
                 </div>
 
-                   {errors.password &&(<p className='text-red-500 font-mono font-semibold'>{errors.password}</p>)}
+                   {errors.password &&(<p className='text-red-500 font-mono font-semibold text-xs italic'>{errors.password}</p>)}
 
-                <div className=''>
+                <div className='py-4'>
                   <label className='block px-2 py-2 text-sm'>Comfirm password</label>
                   <input type="password" name='confirmpass' placeholder='............' onChange={handleOnChange} className='w-full border border-black/25 py-2 px-2 outline-none hover:outline-1 rounded-full placeholder:px-3 text-sm' />
                 </div>
 
-                 {errors.confirmpass &&(<p className='text-red-500 font-mono font-semibold'>{errors.confirmpass}</p>)}
+                 {errors.confirmpass &&(<p className='text-red-500 font-mono font-semibold text-xs italic'>{errors.confirmpass}</p>)}
                 <div className='w-full flex justify-self-start items-center gap-2 py-4 px-3'>
                   <Link href="/sign-in" className='italic text-sm'>Already have an account</Link>
                 </div>
 
-                <div className='w-full py-3 px-4'>
+                <div className='w-full py-4 px-4'>
                   <button type='submit' className='w-80 bg-orange-600 py-3 text-white cursor-pointer rounded-full'>Create account</button>
                 </div>
 
