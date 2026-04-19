@@ -4,6 +4,7 @@ import Link from 'next/link'
 export default function SignIn() {
   // inialization of 
   const [errors, setErrors] = useState("")
+  const [showPassword, setShowPassword] = useState(false);
   const [inputData, setInputData] = useState({
     email: "",
     password: "",
@@ -71,7 +72,7 @@ export default function SignIn() {
                 <label className='block px-2 py-2 text-sm'>Password</label>
                 <input type="password" name='password' placeholder='............' onChange={handleOnChange} className='w-full border border-black/25 py-2 px-2 outline-none hover:outline-1 rounded-full placeholder:px-3 text-sm' />
               </div>
-
+                
                  {errors.password &&(<p className='text-red-500 font-mono font-semibold text-xs italic'>{errors.password}</p>)}
 
               <div className='w-full flex justify-between items-center gap-2 py-4 px-3'>
@@ -82,7 +83,7 @@ export default function SignIn() {
               <div className='w-full py-3 px-4'>
                 <button type='submit' className='w-80 bg-orange-600 py-3 text-white cursor-pointer rounded-full'>Sign in</button>
               </div>
-
+                  
               <div className='w-70 m-auto pb-2'>
                 <p className='text-sm italic '>By continuing you agree to our <Link href="/terms" className='text-sm underline'>Terms</Link></p>
               </div>

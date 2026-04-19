@@ -35,7 +35,6 @@ export default function Setpassword() {
                     <div className='w-full py-3 px-4'>
                       <button className='w-80 bg-orange-600 py-3 text-white cursor-pointer rounded-full'>Submit</button>
                     </div>
-      
                   </form>
                 </div>
               </div>

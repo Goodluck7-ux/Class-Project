@@ -110,7 +110,7 @@ export default function SignUp() {
                     </label>
                   </div>
                 </div>
-             
+              
                 <div className='py-4'>
                   <label className='block px-2 py-2 text-sm'>Full name</label>
                   <input type="text" name='fullname' placeholder='Ngalaka Gift' onChange={handleOnChange} className='w-full border border-black/25 py-2 px-2 outline-none hover:outline-1 rounded-full placeholder:px-3 text-sm' />

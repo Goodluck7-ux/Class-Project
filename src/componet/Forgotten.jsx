@@ -1,7 +1,45 @@
 "use client"
-import React from 'react'
+import React, { useState } from 'react'
 import Link from 'next/link'
 export default function Forgotten() {
+
+   // inialization of 
+    const [errors, setErrors] = useState("")
+    const [inputData, setInputData] = useState({
+      email: "",
+    })
+  
+    // function for handleOnChange
+    const handleOnChange = (e) => {
+      const { name, value } = e.target
+      setInputData({ ...inputData, [name]: value })
+    }
+  
+     // validate by Checking if the input is empty
+  
+    const validate = () => {
+      let newErrors = {}
+  
+      if(!inputData.email){
+        newErrors.email= "please fill  in your email"
+      }
+      return newErrors
+    }
+  
+     // function for formHandling
+      const handleSubmit = (e) => {
+          // prevent form default submission
+        e.preventDefault()
+  
+        const validationErrors = validate()
+        if(Object.keys(validationErrors).length == 0){
+           setErrors('')
+        }
+        else{
+        setErrors(validationErrors)
+        console.log(errors)
+        }
+      }
   return (
     <>
        <div className='w-full h-full bg-orange-50 flex justify-center items-center gap-2 py-10'>
@@ -14,20 +52,21 @@ export default function Forgotten() {
                 </div>
       
                 <div className='w-full h-auto'>
-                  <form action="">
+                  <form action="" onSubmit={handleSubmit}>
     
                     <div className=''>
                       <label className='block px-2 py-2 text-sm'>Email</label>
-                      <input type="email" name='email' placeholder='ngalakagift@gmail.com' className='w-full border border-black/25 py-2 px-2 outline-none hover:outline-1 rounded-full placeholder:px-3 text-sm' />
+                      <input type="email" name='email' placeholder='ngalakagift@gmail.com' onChange={handleOnChange} className='w-full border border-black/25 py-2 px-2 outline-none hover:outline-1 rounded-full placeholder:px-3 text-sm' />
                     </div>
-      
+
+                 {errors.email &&(<p className='text-red-500 font-mono font-semibold text-xs italic'>{errors.email}</p>)}
             
                     <div className='w-full flex justify-between items-center gap-2 py-4 px-3'>
                       <Link href="/sign-in" className='italic text-sm'>Goback to sign in</Link>
                     </div>
       
                     <div className='w-full py-3 px-4'>
-                      <button className='w-80 bg-orange-600 py-3 text-white cursor-pointer rounded-full'>Reset</button>
+                      <button type='submit' className='w-80 bg-orange-600 py-3 text-white cursor-pointer rounded-full'>Reset</button>
                     </div>
       
                   </form>
