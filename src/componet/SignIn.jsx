@@ -4,7 +4,6 @@ import Link from 'next/link'
 export default function SignIn() {
   // inialization of 
   const [errors, setErrors] = useState("")
-  const [showPassword, setShowPassword] = useState(false);
   const [inputData, setInputData] = useState({
     email: "",
     password: "",
